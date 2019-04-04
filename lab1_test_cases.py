@@ -36,9 +36,9 @@ class TestLab1(unittest.TestCase):
         low = 0
         high = len(list_val)-1
         self.assertEqual(bin_search(4, 0, len(list_val)-1, list_val), 4 )
-        self.assertEqual(bin_search(5, 0, 6, [5,6,3,8,19,-4,0]), 0)
-        #self.assertEqual(bin_search(3, 0, 0, [1,2,3], None)
-        #self.assertEqual(bin_search(3, 0, 3, [1,2,4], None)
+        self.assertEqual(bin_search(-4, 0, 6, [-4, 0, 3, 5, 6, 8, 19]), 0)
+        self.assertIsNone(bin_search(3, 0, 0, [1,2,3]))
+        self.assertIsNone(bin_search(3, 0, 3, [1,2,4]))
 
 if __name__ == "__main__":
         unittest.main()
