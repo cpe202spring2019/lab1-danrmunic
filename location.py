@@ -9,10 +9,10 @@ class Location:
 
 # ADD BOILERPLATE HERE (__eq__ and __repr__ functions)
     def __eq__(self, notself):
-        if self is notself:
-            return True
-        elif type(self) != type(notself):
+        if type(self) != type(notself):
             return False
+        elif self.name == notself.name and self.lat == notself.lat and self.lon == notself.lon:
+            return True
         else:
             return False
 
