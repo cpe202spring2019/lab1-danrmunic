@@ -31,13 +31,13 @@ def bin_search(target, low, high, int_list):  # must use recursion
    If target is not found returns None. If list is None, raises ValueError """
    if int_list is None:
        raise ValueError()     #raises ValueError if list is None
-   
+     
+   if low > high:
+       return None            #base case: if low is greater than high, the list can not be split in half anymore
+
    mid = int((low + high) / 2)#sets mid as the index halfway between low and high
    if int_list[mid] == target:
        return mid             #returns mid if the value at mid in the list is the target
-   
-   if low > high:
-       return None            #base case: if low is greater than high, the list can not be split in half anymore
 
    if int_list[mid] > target: 
        return bin_search(target, low, mid-1, int_list)#searches for the target in the lower half of the list
